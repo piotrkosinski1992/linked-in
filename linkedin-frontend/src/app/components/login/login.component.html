@@ -16,7 +16,7 @@
         </label>
         <div class="alert-danger" *ngIf="!loginForm.controls['password'].valid &&
         loginForm.controls['password'].touched"> //Min max doesn't work
-          Password is too short
+          Password is too short!
         </div>
       </div>
     <button type="submit" class="btn" [ngClass]="{'btn-success': loginForm.valid, 'btn-danger': !loginForm.valid}"
