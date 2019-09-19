@@ -1,0 +1,47 @@
+@import "../../../styles/colors";
+
+.navbar-expand {
+  background: $alt-bg;
+  border-bottom: 3px solid $accent;
+  top: 1.5rem;
+
+  .navbar-nav .nav-link {
+    color: $alt-color;
+    padding: 1rem 0.5rem;
+    transition: color 0.3s ease-in;
+    &:hover {
+      color: $accent;
+    }
+    &.active {
+      color: gold;
+    }
+  }
+}
+
+
+.dropdown-item {
+  color: $alt-color;
+  background-color: #117a8b;
+  &:hover {
+    color: palegoldenrod;
+  }
+}
+
+.dropdown-divider {
+  margin: 0;
+}
+
+.dropdown-menu {
+  background: #117a8b;
+}
+
+.in-dropdown {
+  width: 156px;
+}
+
+.fab {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+

@@ -1,0 +1,27 @@
+<nav class="navbar-expand container">
+  <div class="navbar-nav">
+    <ng-container *ngIf="isLoggedIn(); then loggedInNavbar else loggedOutNavbar"></ng-container>
+    <ng-template #loggedInNavbar>
+      <a class="nav-item nav-link" [routerLink]="'/jobs'">Jobs</a>
+      <a class="nav-item nav-link" [routerLink]="'/friends'">Friends</a>
+      <a class="nav-item nav-link" [routerLink]="'/messages'">Messages</a>
+    </ng-template>
+    <ng-template #loggedOutNavbar>
+      <a class="nav-item nav-link" [routerLink]="'/login'">Login</a>
+      <a class="nav-item nav-link" [routerLink]="'/register'">Register</a>
+    </ng-template>
+    <!--DROPDOWN-->
+    <div class="dropdown mt-2 ml-auto" *ngIf="isLoggedIn()">
+      <button type="button" class="in-dropdown btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <i class="fab fa-2x fa-linkedin"></i>
+      </button>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">My profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" (click)="onLogoutClicked()">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
