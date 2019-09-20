@@ -1,4 +1,4 @@
-package com.linkedin.auth;
+package com.linkedin.auth.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

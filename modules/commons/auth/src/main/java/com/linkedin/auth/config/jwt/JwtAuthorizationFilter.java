@@ -2,9 +2,9 @@ package jwt;
 
 import com.auth0.jwt.JWT;
 
-import com.linkedin.auth.User;
-import com.linkedin.auth.UserPrincipal;
-import com.linkedin.auth.UserRepository;
+import com.linkedin.auth.domain.User;
+import com.linkedin.auth.domain.UserPrincipal;
+import com.linkedin.auth.gateway.repositories.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

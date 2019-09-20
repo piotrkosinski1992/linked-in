@@ -3,12 +3,14 @@
 .navbar-expand {
   background: $alt-bg;
   border-bottom: 3px solid $accent;
+  margin-bottom: 2rem;
   top: 1.5rem;
 
   .navbar-nav .nav-link {
     color: $alt-color;
     padding: 1rem 0.5rem;
     transition: color 0.3s ease-in;
+
     &:hover {
       color: $accent;
     }

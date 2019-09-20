@@ -1,0 +1,33 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="loginForm" (ngSubmit)="validateCredentials()">
+        <div>
+            <label>Email
+                <input formControlName="email" type="email" class="form-control my-2 col-md-12 col-12" required
+                       placeholder="email">
+            </label>
+            <div class="alert-danger" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+                <label>Invalid email</label>
+            </div>
+        </div>
+        <div>
+            <label>Password
+                <input formControlName="password" type="password" class="form-control my-2 col-md-12 col-12" required
+                       placeholder="password">
+            </label>
+            <div class="alert-danger"
+                 *ngIf="loginForm.controls['password'].errors?.minlength && loginForm.controls['password'].touched">
+                <label>Password is too short!</label>
+            </div>
+            <div class="alert-danger"
+                 *ngIf="loginForm.controls['password'].errors?.maxlength && loginForm.controls['password'].touched">
+                <label>Password is too long!</label>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn"
+                    [ngClass]="{'btn-success': loginForm.valid, 'btn-light': !loginForm.valid}"
+                    [disabled]="!loginForm.valid">Submit
+            </button>
+        </div>
+    </form>
+</div>

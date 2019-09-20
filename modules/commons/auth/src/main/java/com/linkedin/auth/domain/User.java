@@ -1,6 +1,8 @@
-package com.linkedin.auth;
+package com.linkedin.auth.domain;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -9,11 +11,17 @@ public class User {
     @EmbeddedId
     private EntityId id;
 
+    @JsonProperty(value = "email")
     @Column(name = "EMAIL")
     private String credentialsEmail;
 
+    @JsonProperty(value = "password")
     @Column(name = "PASSWORD")
     private String credentialsPassword;
+
+    @JsonProperty(value = "repeatPassword")
+    @Transient
+    private String repeatCredentialsPassword;
 
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
@@ -25,7 +33,8 @@ public class User {
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    public User() {
+    private User() {
+        this.id = EntityId.create();
     }
 
     public User(String credentialsEmail, String credentialsPassword, Role role, String firstName, String lastName) {
@@ -83,5 +92,15 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getRepeatCredentialsPassword()
+    {
+        return repeatCredentialsPassword;
+    }
+
+    public void setRepeatCredentialsPassword(String repeatCredentialsPassword)
+    {
+        this.repeatCredentialsPassword = repeatCredentialsPassword;
     }
 }

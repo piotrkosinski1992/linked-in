@@ -1,0 +1,37 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Email
+                <input class="form-control my-2" formControlName="email" type="email">
+            </label>
+            <div class="alert-danger"
+                 *ngIf="!credentialsForm.controls['email'].valid && credentialsForm.controls['email'].touched">
+                <label>Invalid email</label>
+            </div>
+        </div>
+        <div>
+            <label>Password
+                <input class="form-control my-2" formControlName="password" type="password">
+            </label>
+            <div class="alert-danger"
+                 *ngIf="credentialsForm.controls['password'].errors?.minlength && credentialsForm.controls['password'].touched">
+                <label>Password is too short!</label>
+            </div>
+            <div class="alert-danger"
+                 *ngIf="credentialsForm.controls['password'].errors?.maxlength && credentialsForm.controls['password'].touched">
+                <label>Password is too long!</label>
+            </div>
+        </div>
+        <div>
+            <label>Repeat password
+                <input class="form-control my-2" formControlName="repeatPassword" type="password">
+            </label>
+        </div>
+        <div class="text-center">
+            <button class="btn" [ngClass]="!credentialsForm.valid ? 'btn-light' : 'btn-success'"
+                    [disabled]="!credentialsForm.valid" type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

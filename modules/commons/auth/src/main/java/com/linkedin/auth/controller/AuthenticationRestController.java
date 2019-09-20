@@ -1,6 +1,9 @@
 package com.linkedin.auth.controller;
 
 import com.auth0.jwt.JWT;
+import com.linkedin.auth.config.JwtAuthenticationRequest;
+import com.linkedin.auth.config.JwtAuthenticationResponse;
+
 import jwt.JwtProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

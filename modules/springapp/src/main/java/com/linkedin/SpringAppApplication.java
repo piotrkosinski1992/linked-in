@@ -1,8 +1,8 @@
 package com.linkedin;
 
-import com.linkedin.auth.Role;
-import com.linkedin.auth.User;
-import com.linkedin.auth.UserRepository;
+import com.linkedin.auth.domain.Role;
+import com.linkedin.auth.domain.User;
+import com.linkedin.auth.gateway.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

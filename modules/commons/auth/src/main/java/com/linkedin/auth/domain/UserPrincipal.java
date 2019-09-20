@@ -1,4 +1,4 @@
-package com.linkedin.auth;
+package com.linkedin.auth.domain;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

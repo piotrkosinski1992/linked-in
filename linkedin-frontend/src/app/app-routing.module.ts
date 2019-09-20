@@ -5,9 +5,9 @@ import {FriendsComponent} from "./components/friends/friends.component";
 import {MessagesComponent} from "./components/messages/messages.component";
 import {AdminAuthGuardService} from "./commons/auth-guard/admin.auth-guard.service";
 import {HomeComponent} from "./components/home/home.component";
-import {LoginComponent} from "./components/login/login.component";
 import {ProfileComponent} from "./components/profile/profile.component";
-import {RegisterComponent} from "./components/register/register.component";
+import {RegisterComponent} from "./components/auth/register/register.component";
+import { LoginComponent } from './components/auth/login/login.component';
 
 const routes: Routes = [
   {path: 'jobs', component: JobsComponent, canActivate : [AdminAuthGuardService]},

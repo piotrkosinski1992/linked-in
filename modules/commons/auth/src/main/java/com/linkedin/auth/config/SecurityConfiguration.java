@@ -1,4 +1,4 @@
-package com.linkedin.auth;
+package com.linkedin.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+
+import com.linkedin.auth.gateway.repositories.UserRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -61,10 +63,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js"
                 ).permitAll()
-                .antMatchers(HttpMethod.POST, "/owners/register/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/pets/**").hasAnyRole("PET_OWNER", "DOCTOR")
-                .antMatchers(HttpMethod.GET, "/owners/**").hasAnyRole("DOCTOR", "PET_OWNER")
+                .antMatchers(HttpMethod.POST, "/register/**").permitAll()
+               .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
+                /*                .antMatchers(HttpMethod.GET, "/pets/**").hasAnyRole("PET_OWNER", "DOCTOR")
+                               .antMatchers(HttpMethod.GET, "/owners/**").hasAnyRole("DOCTOR", "PET_OWNER")*/
                 .anyRequest().authenticated();
     }
 

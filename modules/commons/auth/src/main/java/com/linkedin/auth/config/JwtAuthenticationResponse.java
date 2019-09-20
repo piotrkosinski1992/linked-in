@@ -1,4 +1,4 @@
-package com.linkedin.auth.controller;
+package com.linkedin.auth.config;
 
 import java.io.Serializable;
 
